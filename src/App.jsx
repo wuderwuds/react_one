@@ -6,7 +6,7 @@ import { Header } from './components/Header/Header';
 import Main from './components/Main/Main';
 
 
-function App() {
+faunction App() {
 const [count, setCount] = useState(0);
 
   
