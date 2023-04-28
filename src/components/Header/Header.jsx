@@ -1,13 +1,10 @@
-function Header(props) {
+import { Form } from '../Form/form'
+import './header.css'
+function Header({addToList}) {
     return (
         <>
-        <header>Header!!!!</header>
-        {props.zxc}
-        <hr/>
-        {props.countInHeader}
-        
-        <hr/>
-        
+        <header className="wrapper">Header!!!!</header>
+   <Form addToList={addToList}/>
         </>
     )
 }
