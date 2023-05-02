@@ -1,6 +1,7 @@
 import { Form } from '../Form/form'
 import './header.css'
-function Header({addToList}) {
+import React from 'react'
+const Header = ({addToList}) => {
     return (
         <>
         <header className="wrapper">Header!!!!</header>
@@ -8,4 +9,4 @@ function Header({addToList}) {
         </>
     )
 }
-export {Header}
+export const MemoHeader = React.memo(Header)

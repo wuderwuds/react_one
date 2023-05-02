@@ -15,7 +15,7 @@ export const Form = ({addToList}) => {
       
     return (        
     <form onSubmit={(event)=>hundleSubmit(event)} className="d-flex flex-column align-items-center mt-3">
-        <div className="mb-3">
+        <div className="d-flex mb-3">
           
           <input 
            placeholder="задача"
@@ -25,10 +25,10 @@ export const Form = ({addToList}) => {
            className="form-control"
            required
            />
-         
+          <button type="submit" className="btn btn-primary">Добавить</button>
         </div>
       
-        <button type="submit" className="btn btn-primary">Добавить</button>
+       
       </form>
       )
 

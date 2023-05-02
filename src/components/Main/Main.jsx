@@ -1,50 +1,28 @@
+import { DeleteAllButton } from '../DeleteAllButton/DeleteAllButton'
+import { Todo } from '../TodoList/TodoList'
 import styles from './main.module.css'
-const Main = ({todos, deleteList, deleteOneTodo}) => {
+
+
+
+
+
+
+export const Main = ({todos, deleteList, deleteOneTodo, updTodoStatus}) => {
    if (!todos.length) {
     return  <p className='m-3'>TODO пока пуст....</p>
    }
     return (
         
       
-      <main className={`mt-3 ${styles.wrapper}`} > 
-      <ul className='mt-3 list-group'>
-      {todos.map((todo, index)=>{
-        return <li className={`list-group-item ${styles.wrapper1}`} key={todo.id}> 
-      {`${index+1}.  `}  
-      <span>
-      {todo.title} 
-      </span>
-      <div><button 
-      type="submit" 
-      className='btn btn-danger'
-      onClick={() => deleteOneTodo(todo.id)}>
-        Удалить 
-      </button>
+      <main className={`m-3  ${styles.wrapper}`} > 
+      <Todo  todos={todos} 
+      deleteOneTodo={deleteOneTodo}
+      updTodoStatus={updTodoStatus}/>
 
-      <button 
-      type="submit" 
-      className='btn btn-warning mx-3'
-      onClick={() => console.log('IZMENA')}>
-        Изменить
-      </button>
-      </div>
-      
-      </li>
-      })}
-      </ul>
-
-      <button 
-      type="submit" 
-      className="btn btn-danger m-3"
-      onClick={deleteList}>
-      
-        Удалить все
-      </button>
+      <DeleteAllButton deleteList={deleteList}/>
       
       </main>
    
         
     )
 }
-
-export default Main
