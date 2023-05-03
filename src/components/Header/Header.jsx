@@ -1,14 +1,12 @@
-function Header(props) {
+import { Form } from '../Form/form'
+import './header.css'
+import React from 'react'
+const Header = ({addToList}) => {
     return (
         <>
-        <header>Header!!!!</header>
-        {props.zxc}
-        <hr/>
-        {props.countInHeader}
-        
-        <hr/>
-        
+        <header className="wrapper">Header!!!!</header>
+   <Form addToList={addToList}/>
         </>
     )
 }
-export {Header}
+export const MemoHeader = React.memo(Header)
