@@ -1,25 +1,26 @@
+import { useContext } from 'react'
 import { DeleteAllButton } from '../DeleteAllButton/DeleteAllButton'
 import { Todo } from '../TodoList/TodoList'
 import styles from './main.module.css'
+import { ContextTodo } from '../../context/todosContext'
 
 
 
 
 
 
-export const Main = ({todos, deleteList, deleteOneTodo, updTodoStatus}) => {
-   if (!todos.length) {
+export const Main = () => {
+   const todos = useContext(ContextTodo)
+      if (!todos.length) {
     return  <p className='m-3'>TODO пока пуст....</p>
    }
     return (
         
       
       <main className={`m-3  ${styles.wrapper}`} > 
-      <Todo  todos={todos} 
-      deleteOneTodo={deleteOneTodo}
-      updTodoStatus={updTodoStatus}/>
+      <Todo/>
 
-      <DeleteAllButton deleteList={deleteList}/>
+      <DeleteAllButton/>
       
       </main>
    

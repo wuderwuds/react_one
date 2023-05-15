@@ -1,6 +1,9 @@
+import { useContext } from "react"
 import { TodoItem } from "../TodoItem/TodoItem"
+import { ContextTodo } from "../../context/todosContext"
 
-export const Todo =({todos, deleteOneTodo, updTodoStatus}) => {
+export const Todo =() => {
+     const todos = useContext(ContextTodo)
     return (   
      <ul className='mt-3 list-group'>
     {todos.map((todo, index)=>{
@@ -8,8 +11,7 @@ export const Todo =({todos, deleteOneTodo, updTodoStatus}) => {
       key={todo.id}
       todo={todo}
       index={index}
-      deleteOneTodo={deleteOneTodo}
-      updTodoStatus={updTodoStatus}
+   
       />
     })}
     </ul>

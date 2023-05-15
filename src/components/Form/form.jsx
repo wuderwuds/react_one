@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ContextFun } from "../../context/todosContext"
 
 
-export const Form = ({addToList}) => {
-   
+export const Form = () => {
+    const {addToList} = useContext(ContextFun)
     const [value, setValue] = useState("")
    
     const hundleSubmit = (event) => {

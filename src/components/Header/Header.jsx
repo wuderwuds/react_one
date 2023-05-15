@@ -1,11 +1,11 @@
 import { Form } from '../Form/form'
 import './header.css'
 import React from 'react'
-const Header = ({addToList}) => {
+const Header = () => {
     return (
         <>
         <header className="wrapper">Header!!!!</header>
-   <Form addToList={addToList}/>
+        <Form/>
         </>
     )
 }

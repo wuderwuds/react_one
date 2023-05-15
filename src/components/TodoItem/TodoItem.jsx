@@ -1,5 +1,8 @@
+import { useContext } from 'react'
 import styles from './todoItem.module.css'
-export const TodoItem = ({todo, index, deleteOneTodo, updTodoStatus}) => {
+import { ContextFun } from '../../context/todosContext'
+export const TodoItem = ({todo, index,}) => {
+    const {deleteOneTodo, updTodoStatus} = useContext(ContextFun)
     return (<li className={`list-group-item d-flex ${styles.wrapper1}`}> 
     {`${index+1}. `}  
     <span className={todo.status ? 'text-decoration-line-through' : '' } >
